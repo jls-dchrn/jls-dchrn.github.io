@@ -74,7 +74,32 @@ li {
     margin-bottom: 2rem;
     /*Give to each li its list_counter position, used to display it in the project-card::before*/
     counter-increment: list_counter;
+    /* 
+    Trigger the fadeInUp keyframe animation in 0.6 sec 
+    Ease-out make the animation first then slow down at the end.
+    The li component that are delayed by animation-delay would be invisible before the beginning of the animation without "backwards".
+    Here, the init value will be applied instead. Because it has opacity 0, it doesn't matter that much.
+    */
+    animation: fadeInUp 0.6s ease-out backwards;
 }
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
 
 .project-card {
     background: white;
