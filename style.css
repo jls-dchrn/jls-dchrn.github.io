@@ -13,20 +13,40 @@ body {
     min-height: 100vh;
     line-height: 1.6;
 }
+
+
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 3rem 2rem;
+    padding: 2rem;
+    height: 20vh;  
+    min-height: 5rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     top: 0;
     position: sticky;
     /* paired with the sticky position so that the project-card won't be on top while scrolling*/
     z-index: 100;
+    animation: slideDown 0.6s ease-out;
+}
+
+/*Translate from the top to the header place */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vh, 4rem);
 
     /* Same gradiant as the body but apply it only on the text of the h1*/
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -37,12 +57,12 @@ h1 {
     -webkit-text-fill-color: transparent;
     
     
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
     font-weight: 700;
 }
 
 header p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vh, 2rem);
     color: #666;
     /* Use the google Caveat cursive font */
     font-family: "Caveat", cursive;
