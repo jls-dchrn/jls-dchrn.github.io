@@ -46,7 +46,7 @@ header {
 }
 
 h1 {
-    font-size: clamp(2rem, 4vh, 4rem);
+    font-size: clamp(1rem, 4vh, 4rem);
 
     /* Same gradiant as the body but apply it only on the text of the h1*/
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -57,12 +57,12 @@ h1 {
     -webkit-text-fill-color: transparent;
     
     
-    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
+    /*margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);*/
     font-weight: 700;
 }
 
 header p {
-    font-size: clamp(1rem, 4vh, 2rem);
+    font-size: clamp(1rem, 2vh, 2rem);
     color: #666;
     /* Use the google Caveat cursive font */
     font-family: "Caveat", cursive;
