@@ -3,11 +3,22 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>my portfolio</title>
+    
+    <!-- Make the page witdth match the device screen width and put zoom to normal level, it's a responsive feature -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jules's portfolio</title>
+
+     <!-- Favicon obtained from the user liquidvolcanoe on this website: https://www.favicon.cc -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Favicon obtained from the user liquidvolcanoe on this website: https://www.favicon.cc -->
+   
     <link href="style.css" rel="stylesheet">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -20,46 +31,69 @@
 
         <h2>My projects</h2>
         <ol>
-            <li><strong>Personal Teacher Assistant</strong><a href="https://github.com/jls-dchrn/PersonalTeacherAssistant" target="_blank" rel="noopener noreferrer">🔗</a> </li>
-            <p>
-                An LLM-Based assistant for childrens needing a tutor to study or do their homework.
-                The goal is for the assistant to help the children by decomposing the problem step by step without giving him the answer.
-                Is also implemented a summary of the current session to assets the children streghts and weeknesses and adapt to his learning pace.
-            </p>
-            <li><strong>VOC detection</strong><a href="https://github.com/jls-dchrn/VOCdetection" target="_blank" rel="noopener noreferrer">🔗</a></li>
-            <p>
-                VOCs or Volatile Organic Compounds are a family of indoor gases which can cause different kind of side effects when the go over certain thresholds.
-                This project provide the arduino code and the instructions to build a VOC gas detector.
-            </p>
-            <li><strong>Generate PDF</strong><a href="https://github.com/jls-dchrn/GeneratePDF" target="_blank" rel="noopener noreferrer">🔗</a></li>
-            <p>
-                Sometime for some benchmarks, we need PDFs which will vary only from a few number of parameters like the number of pages or the number of tables.
-                This code have been used to make different benchmarks on the <a href="https://github.com/docling-project/docling-serve" target="_blank" rel="noopener noreferrer">Docling-serve</a> github.
-                It use the reportlab library.
-                Because there is no tools select the number of pages to fill with text, it have been done experimentally, there is room for improvement.
-            </p>
-            <li><strong>HGSS pokemon tileset</strong><a href="https://github.com/jls-dchrn/ HGSS_pokemon_tileset" target="_blank" rel="noopener noreferrer">🔗</a></li>
-            <p>
-                Some tileset are hard to use because they need to be manually processed. This is the case for the one from SirMalo on DeviantArt.
-                This project provide ready to use tilesets for Pokemon Essential on RPGMaker XP.     
-            </p>
-             <li><strong>Understand Neural Networks</strong><a href="https://github.com/jls-dchrn/understand_Neural_Networks" target="_blank" rel="noopener noreferrer">🔗</a></li>
-            <p>
-                A collection of notebook explaining how Neural Networks works and how to use Pytorch to create them.   
-            </p>
+            <li>
+                <div class="project-card">
+                    <strong>Personal Teacher Assistant</strong>
+                    <a href="https://github.com/jls-dchrn/PersonalTeacherAssistant" target="_blank" rel="noopener noreferrer">🔗</a> 
+                    <p>    
+                        An LLM-Based assistant for childrens needing a tutor to study or do their homework.
+                        The goal is for the assistant to help the children by decomposing the problem step by step without giving him the answer.
+                        Is also implemented a summary of the current session to assets the children streghts and weeknesses and adapt to his learning pace.
+                    </p>
+
+                </div>
+            </li>
+            
+           <li>
+                <div class="project-card">
+                        <strong>VOC Detection</strong>
+                        <a href="https://github.com/jls-dchrn/VOCdetection" target="_blank" rel="noopener noreferrer">🔗</a>
+                    <p>
+                        VOCs or Volatile Organic Compounds are a family of indoor gases which can cause different kinds of side effects when they go over certain thresholds.
+                        This project provides the Arduino code and the instructions to build a VOC gas detector.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="project-card">
+                    <strong>Generate PDF</strong>
+                    <a href="https://github.com/jls-dchrn/GeneratePDF" target="_blank" rel="noopener noreferrer">🔗</a>
+                    <p>
+                        Sometimes for benchmarks, we need PDFs which will vary only by a few parameters like the number of pages or the number of tables.
+                        This code has been used to make different benchmarks on the <a href="https://github.com/docling-project/docling-serve" target="_blank" rel="noopener noreferrer">Docling-serve</a> GitHub.
+                        It uses the reportlab library. Because there is no tool to select the number of pages to fill with text, it has been done experimentally so there is room for improvement.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="project-card">
+                    <strong>HGSS Pokemon Tileset</strong>
+                    <a href="https://github.com/jls-dchrn/HGSS_pokemon_tileset" target="_blank" rel="noopener noreferrer">🔗</a>
+                    <p>
+                        Some tilesets are hard to use because they need to be manually processed. This is the case for the one from SirMalo on DeviantArt.
+                        This project provides ready-to-use tilesets for Pokemon Essentials on RPGMaker XP.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="project-card">
+                    <strong>Understand Neural Networks</strong>
+                    <a href="https://github.com/jls-dchrn/understand_Neural_Networks" target="_blank" rel="noopener noreferrer">🔗</a>
+                    <p>
+                        A collection of notebooks explaining how Neural Networks work and how to use PyTorch to create them.
+                    </p>
+                </div>
+            </li>
         </ol>
-       
     </main>
 
     <footer>
         <p>© 2025 - jls-dchrn | <a href="https://github.com/jls-dchrn">My GitHub</a></p>
     </footer>
-
 </body>
-
-
-
 </html>
-
 
 
