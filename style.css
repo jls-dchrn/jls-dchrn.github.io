@@ -195,6 +195,18 @@ li:nth-child(5) { animation-delay: 0.5s; }
     margin-left: 3rem;
 }
 
+.project-description a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.project-description a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
 footer {
     background: rgba(255, 255, 255, 1);
     padding: 2rem;
