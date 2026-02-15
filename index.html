@@ -22,10 +22,34 @@
 
 </head>
 <body>
+
+    
     <header>
+        <!-- Checkbox hidden linked to the label to create a menu-button -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-button" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
     <h1>Welcome to my GitHub Portfolio</h1>
     <p>Hi! I'm Jules, here are some of my personal projects.</p>
     </header>
+
+     <!-- Menu Overlay displayed when clicked on menu button-->
+    <div class="menu-overlay">
+        <div class="menu-content">
+            <h2>Navigation</h2>
+            </h2>
+            <ul>
+                <li> <h3>Understand Neural Networks</h3></li>
+                <li> <a href="https://jls-dchrn.github.io/understand_Neural_Networks/HTML_sources/en_quickstart.html">quickstart</a></li>
+                <li> <a href="https://jls-dchrn.github.io/understand_Neural_Networks/HTML_sources/en_going_deeper.html">going deeper </a></li>
+            </ul>
+        </div>
+    </div>
 
     <main>
 
@@ -76,7 +100,7 @@
            <li>
                 <div class="project-card">
                     <div class="project-header">
-                        <strong class="project-title"rong>VOC Detection</strong>
+                        <strong class="project-title">VOC Detection</strong>
                         <a href="https://github.com/jls-dchrn/VOCdetection" target="_blank" rel="noopener noreferrer" class ="project-link">🔗</a>
                     </div>
                     <p class="project-description">

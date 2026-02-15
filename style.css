@@ -14,6 +14,164 @@ body {
     line-height: 1.6;
 }
 
+/* hide the checkbox */
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    background: none;             
+    border: none;   
+
+    /* position it right with the rest of the header */
+    position: absolute;           
+    left: 3vh;                   
+    top: 50%;                     
+    transform: translateY(-50%);  
+
+    /* Change the cursor for a hand when it's over the button with a 10px padding margin*/
+    cursor: pointer;              
+    padding: 10px;                
+
+    /* Make it the highest priority, menu-button > header & menu-overlay > the rest */
+    z-index: 101;                
+
+    /* combined with the menu-vutton + span for the logo display */
+    display: flex;               
+    flex-direction: column;       
+    gap: 0.6vh;                     
+    transition: transform 0.2s ease; 
+}
+
+
+.menu-button:hover {
+    /* just because it's kinda funny*/
+    transform: translateY(-50%) scale(1.1) rotate(365deg); 
+}
+
+/* Draw the 3 colomns of the burger menu icon */
+.menu-button span {
+    width: 5vh;                  
+    height: 0.5vh;                  
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    display: block;               
+    transition: all 0.3s ease;    
+    border-radius: 2px;           
+}
+
+/* Quand la checkbox est cochée (:checked), transforme le burger en X */
+header:has(.menu-toggle:checked) .menu-button span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+header:has(.menu-toggle:checked) .menu-button span:nth-child(2) {
+    opacity: 0;
+}
+
+header:has(.menu-toggle:checked) .menu-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.menu-overlay {
+    /*position sticky like the header*/
+    position: sticky;              
+    top: 20vh;                       
+    left: 0;                  
+    width: 100%;   
+
+    /* Used to hide the overlay while the button isn't clicked */
+    min-height: 0;   
+    max-height: 0;       
+    overflow: hidden;
+
+    /* background */
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.98) 0%, rgba(118, 75, 162, 0.98) 100%);
+    backdrop-filter: blur(10px); 
+
+    /* Over everthing else than the menu-button */
+    z-index: 100;      
+
+    transition: max-height 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
+    opacity: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* When the checkbox is activated, display the menu*/
+body:has(#menu-toggle:checked) .menu-overlay {
+    /* make the height adapt to its content with a min of 20% of the screen */
+    min-height: 20vh;   
+    /* can take until 80% of the page ( the 20% left are for the header)  */
+    max-height: 80vh; 
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.menu-content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animation to make the content appears when the menu is opening */
+body:has(#menu-toggle:checked) .menu-overlay .menu-content {
+    animation: fadeInMenu 0.5s ease-out;
+}
+
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-content h2 {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.menu-content h3{
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+}
+
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-content li {
+    margin-bottom: 0;
+    animation: none;
+}
+
+.menu-content a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-content a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
 header {
     background: rgba(255, 255, 255, 0.95);
@@ -223,4 +381,19 @@ footer a {
 
 footer a:hover {
     color: #764ba2;
+}
+
+/* Responsive adjustments for menu button */
+@media (max-width: 768px) {
+    .menu-button {
+        left: 15px;
+    }
+    
+    .menu-content {
+        padding: 60px 20px 40px;
+    }
+    
+    .menu-content a {
+        font-size: 1.4rem;
+    }
 }
